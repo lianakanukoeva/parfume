@@ -1,0 +1,158 @@
+.slider{
+    .slider__wrapper{
+        margin: 0 auto;
+        margin-top: rem(63px);
+        display: flex;
+        max-width: 90%;
+        min-width: 90%;
+        overflow: hidden;
+        @include tablets{
+            max-width: 90%;
+            display: flex;
+            flex-direction: column;
+        }
+        @include phones{
+            margin: 0;
+            width: 90%;
+            position: relative;
+            font-size: rem(18px);
+        }
+    }
+    .slider__title{
+        h2{
+            position: absolute;
+            z-index: 2;
+            text-transform: uppercase;
+            max-width: rem(550px);
+            font-size: rem(42px);
+            font-weight: 800;
+	        font-style: normal;
+            margin-top: rem(150px);
+            @include tablets{
+                position: relative;
+                margin-top: rem(50px);
+            }
+            @include phones{
+                position: relative;
+                max-width: 30%;
+                margin-left: 5%;
+                font-size: rem(18px);
+            }
+        }
+    }
+    .more{
+        position: absolute;
+        margin-top: rem(340px);
+        width: rem(250px);
+        padding-bottom: rem(20px);
+        border-bottom: 2px solid $base;
+        @include tablets{
+            display: none;
+        }
+        a{
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $base;
+            &:hover{
+                color: $base_hover;
+            }
+        }
+    }
+    .slider__content{
+        margin-left: rem(200px);
+        z-index: 1;
+        @include tablets{
+            margin: 0;
+            overflow: hidden;
+            max-width: 90%;
+        }
+        .slider__elements{
+            display: flex;
+            max-width: rem(1150px);
+            overflow: hidden;
+            position: relative;
+            @include tablets{
+                max-width: 90%;
+            }
+            .slider__item{
+                min-width: 100%;
+                @include phones{
+                    max-width: 90%;
+                    font-size: rem(18px);
+                }
+                .slider__face{
+                    @include phones{
+                        overflow: hidden;
+                        img{
+                            max-width: 90%;
+                        }
+                    }
+                }
+            }
+            .slider__product{
+                position: absolute;
+                margin-left: 42%;
+                margin-top: rem(105px);
+                display: flex;
+                .span{
+                    margin: 0 rem(50px);
+                    margin-top: rem(230px);
+                }
+                @include phones{
+                    max-height: 99%;
+                    object-fit: cover;
+                    margin: 0;
+                    margin-left: 2%;
+                }
+            }
+        }
+        .slider__points{
+            position: absolute;
+            display: flex;
+            margin-left: rem(30px);
+            margin-top: rem(-60px);
+            .square{
+                width: rem(10px);
+                height: rem(10px);
+                border: 2px solid $base;
+                margin-left: rem(31px);
+                cursor: pointer;
+            }
+            .active{
+                background-color: $base;
+            }
+        }
+    }
+    .slider__advice{
+        z-index: 2;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: rem(50px);
+        right: 0;
+        margin-top: rem(-20px);
+        margin-right: rem(60px);
+        @include desktop{
+            display: none;
+        }
+        h3{
+            font-weight: bold;
+	        font-style: normal;
+            text-transform: uppercase;
+            border-bottom: 2px solid $base;
+            padding-bottom: rem(40px);
+        }
+        .advice__list{
+            a{
+                line-height: rem(35px);
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                color: #000;
+                &:hover{
+                    color: $pink;
+                }
+            }
+        }
+    }
+}

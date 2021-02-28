@@ -1,0 +1,242 @@
+.header {
+    &__topbar {
+        height: rem(50px);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid #ccc;
+        @include desktop {
+            display: none;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+                color: $base;
+            }
+            &:active {
+                color: $base_hover;
+            }
+        }
+    }
+    .topbar__menu {
+        display: none;
+        @include desktop {
+            position: absolute;
+            margin-top: rem(30px);
+            margin-left: rem(30px);
+            display: block;
+            cursor: pointer;
+        }
+    }
+    .topbar__items {
+        display: flex;
+    }
+    .topbar__item {
+        margin-right: rem(53px);
+    }
+    .topbar__right {
+        display: flex;
+        .topbar__account {
+            margin-right: rem(90px);
+        }
+        .topbar__select {
+            margin-top: rem(-3px);
+            sup {
+                background-color: $base;
+                border-radius: 50%;
+                padding: 0 rem(6px);
+                color: #fff;
+            }
+        }
+    }
+    &__search {
+        display: grid;
+        grid-template-columns: rem(290px) rem(880px) rem(270px);
+        grid-template-rows: rem(140px);
+        justify-content: center;
+        margin-left: rem(100px);
+        padding: rem(30px) 0;
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include tablets {
+            width: 90%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .header__center {
+            @include tablets {
+                max-width: 100%;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+            .form {
+                .form__container {
+                    padding: 0 0 rem(22px) 0;
+                    display: flex;
+                    border-bottom: 2px solid $base;
+                    width: rem(801px);
+                }
+                input {
+                    border: none;
+                    width: rem(780px);
+                    &::placeholder {
+                        text-transform: uppercase;
+                        color: #000;
+                    }
+                }
+                button {
+                    border: none;
+                    background: none;
+                    svg {
+                        fill: $base;
+                    }
+                    &:hover {
+                        svg {
+                            fill: $base_hover;
+                        }
+                        cursor: pointer;
+                    }
+                }
+            }
+            .header__contacts {
+                width: 90%;
+                justify-content: space-between;
+                display: flex;
+                text-transform: uppercase;
+                font-weight: 800;
+                font-style: normal;
+                @include tablets {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+            }
+            .header__block {
+                margin-top: rem(35px);
+                display: flex;
+                align-items: center;
+                .info {
+                    padding-left: rem(17px);
+                }
+                .first {
+                    padding-left: 0;
+                }
+                svg {
+                    fill: $base;
+                }
+            }
+        }
+        .header__right {
+            .header__bag {
+                width: rem(90px);
+                height: rem(84px);
+                background-color: $base;
+                padding: rem(20px) 0;
+                padding-right: rem(20px);
+                padding-left: rem(29px);
+                @include desktop {
+                    display: none;
+                }
+                a {
+                    display: flex;
+                    text-decoration: none;
+                    sup {
+                        color: #fff;
+                        padding-left: rem(14px);
+                        margin-top: rem(-15px)
+                    }
+                }
+                &:hover {
+                    background-color: $base_hover;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &__menu {
+        background-color: $bg;
+        svg {
+            display: none;
+            transform: rotate(90deg);
+            fill: #ccc;
+            padding: rem(3px) 0;
+            margin: 0 auto;
+            @include desktop {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        .header__list {
+            width: 100%;
+            @include desktop {
+                display: none;
+            }
+        }
+        @include desktop {
+            &_active {
+                .header__list_active {
+                    display: block;
+                }
+            }
+        }
+        .header__items {
+            display: flex;
+            justify-content: space-between;
+            @include desktop {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        }
+        .header__item {
+            padding: rem(23px) 0;
+            padding-left: rem(58px);
+            height: 100%;
+            cursor: pointer;
+            @include desktop {
+                padding: 5%;
+            }
+            .item__list {
+                transition: all 0.5s ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+                margin: rem(23px) 0;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+                position: absolute;
+                z-index: 3;
+                background-color: #fff;
+                border-top: 2px solid $base;
+                padding: rem(25px) rem(30px);
+                .item__items {
+                    padding: rem(10px) 0;
+                }
+                a {
+                    color: #000;
+                }
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    color: $base_hover;
+                }
+            }
+            &:hover {
+                .item__list {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        .sale {
+            padding: rem(23px) rem(70px);
+            background-color: $pink;
+            @include desktop {
+                padding: 5% 10%;
+            }
+        }
+    }
+}

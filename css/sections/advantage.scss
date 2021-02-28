@@ -1,0 +1,24 @@
+.advantage{
+    display: flex;
+    font-size: rem(12px);
+    justify-content: space-around;
+    text-transform: uppercase;
+    @include desktop{
+        display: none;
+    }
+    hr{
+        width: rem(80px);
+        height: 1px;
+        background-color: #eceaed;
+        border: 0px none;
+        line-height: 0;
+        margin-top: rem(25px);
+    }
+    p{
+        padding-left: rem(30px);
+        width: rem(200px);
+    }
+    .advantage__item{
+        display: flex;
+    }
+}

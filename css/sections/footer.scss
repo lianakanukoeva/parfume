@@ -1,0 +1,151 @@
+.footer{
+    background-color: $bg;
+    color: #d8d7d8;
+    .footer__wrapp{
+        width: 90%;
+        margin: 0 auto;
+        padding: rem(65px) 0;
+    }
+    .footer__block{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 60%;
+        padding-bottom: rem(50px);
+        border-bottom: 1px solid #3f3a41;
+        @include desktop{
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 60% 60%;
+        }
+        @include tablets{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer__h3{
+            font-weight: 800;
+            font-style: normal;
+            text-transform: uppercase;
+            color: #fff;
+            padding-bottom: rem(35px);
+            @include phones{
+                padding-bottom: 0;
+            }
+        }
+        .footer__item{
+            padding: rem(5px) 0;
+            a{
+                text-decoration: none;
+                color: #d8d7d8;
+                &:hover{
+                    color: $base;
+                }
+            }
+        }
+        .footer__whats{
+            margin-top: rem(-10px);
+            display: flex;
+            align-items: center;
+            line-height: rem(30px);
+            svg{
+                margin-left: rem(15px);
+            }
+        }
+        .footer__call{
+            margin-top: rem(20px);
+            font-weight: 800;
+            font-style: normal;
+            font-size: rem(14px);
+        }
+        .footer__info{
+            svg{
+                fill: $base
+            }
+            p{
+                margin-left: rem(20px);
+                line-height: 0;
+            }
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .footer__t-list{
+            .footer__form{
+                font-size: rem(14px);
+                #text{
+                    font-weight: 600;
+                    font-style: normal;
+                    text-transform: uppercase;
+                    width:100%;
+                    background-color: $bg;
+                    color: #d8d7d8;
+                    border: 0px;
+                    padding: rem(15px) 0;
+                    border-bottom: 2px solid $base;
+                }
+                #button{
+                    font-weight: 600;
+                    font-style: normal;
+                    margin-top: rem(30px);
+                    text-transform: uppercase;
+                    float: right;
+                    color: $base;
+                    border: 0;
+                    background: none;
+                    cursor: pointer;
+                }
+            }
+            .footer__inst{
+                font-weight: 800;
+                font-style: normal;
+                margin-top: rem(95px);
+                color: #fff;
+                text-transform: uppercase;
+                display: flex;
+                .footer__img{
+                    border-radius: 50%;
+                    overflow: hidden;
+                    width: 48px;
+                    height: 48px;
+                }
+                img{
+                    background-color: #fff;
+                    padding: 10px;
+                    width: 100%;
+                    height: 100%;
+                }
+                p{
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+    .footer__vault{
+        display: flex;
+        justify-content: space-between;
+        padding-top: rem(50px);
+        @include phones{
+            flex-direction: column;
+        }
+        .footer__p{
+            display: flex;
+            align-items: center;
+            margin-top: -10px;
+            svg{
+                fill: #fff;
+            }
+            p{
+                margin-left: rem(10px);
+            }
+        }
+        .footer__right{
+            display: flex;
+            p{
+                margin-top: rem(0px);
+            }
+            svg{
+                margin-right: rem(18px);
+            }
+        }
+    }
+}
